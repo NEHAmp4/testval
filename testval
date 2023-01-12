@@ -1,0 +1,24 @@
+l = [["TOI","Hindu"],["TOI","ET"],["TOI","BM"],["TOI","HT"],
+     ["Hindu","ET"],["Hindu","BM"],["Hindu","HT"],
+     ["ET","BM"],["ET","HT"],
+     ["BM","HT"]]
+
+bud ={"TOI" : 26,
+"Hindu" :20.5,
+"ET" : 34,
+"BM" : 10.5,
+"HT" : 18 }
+dict1 = []
+def newspapercost(budget):
+    for x,y in bud.items():
+        for i,j in bud.items():
+            if j != i:
+                if(y+j < (budget)):
+                    if x != i:
+                        if [x,i] in l:
+                            dict1.append([x,i])
+    return dict1
+
+
+print(newspapercost(int(input("Enter the budget "))))
+        
